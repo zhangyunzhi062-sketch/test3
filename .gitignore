@@ -1,0 +1,54 @@
+# Codex / editor metadata
+.codex/
+.agents/
+.idea/
+.vscode/
+*.code-workspace
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Ultralytics local settings
+.ultralytics/
+
+# Datasets and generated manifests
+data/
+datasets/
+generated/
+*.cache
+
+# Training and prediction outputs
+runs/
+outputs/
+results/
+release-dist/
+*.zip
+
+# Model weights and exported engines
+*.pt
+*.pth
+*.onnx
+*.engine
+*.torchscript
+*.tflite
+*.pb
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+~$*
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,4 @@
+# PyTorch 和 Ultralytics 按《使用手册》单独安装，避免覆盖 CUDA 版本或可编辑源码。
+PyYAML>=6.0,<7.0
+numpy==1.26.4
+opencv-python==4.11.0.86

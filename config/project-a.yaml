@@ -1,0 +1,40 @@
+project:
+  name: uav_tree_stone
+  prepared_dataset: generated/uav-tree-stone.v1.yolov11
+  classes: [tree, stone]
+
+datasets:
+  - id: nature
+    root: "database/Nature objects.v1i.yolov11"
+    source_names: [road, rock, tree, trunk, water]
+    class_map: {1: 1, 2: 0, 3: 0}  # rock -> stone; tree/trunk -> tree
+  - id: stone
+    root: "database/Stone.v1-training-stone.yolov11"
+    source_names: [stone]
+    class_map: {0: 1}  # stone -> stone
+  - id: tree_top
+    root: "database/Tree-Top-View.v1i.yolov11"
+    source_names: [tree-top]
+    class_map: {0: 0}  # tree-top -> tree
+
+training:
+  model: yolo11n.pt
+  epochs: 100
+  imgsz: 640
+  batch: 8
+  device: "0"
+  workers: 0
+  seed: 42
+  patience: 30
+  project: runs/detect
+  name: uav_tree_stone
+
+prediction:
+  model: runs/detect/uav_tree_stone/weights/best.pt
+  source: "待检测图片"
+  conf: 0.25
+  iou: 0.70
+  imgsz: 640
+  device: "0"
+  output: outputs/predict
+  open_result: true

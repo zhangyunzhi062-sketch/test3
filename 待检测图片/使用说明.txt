@@ -1,0 +1,8 @@
+请把需要识别的 JPG、JPEG、PNG、BMP、TIF、TIFF 或 WEBP 图片放入本文件夹。
+
+如果模型位于默认的 runs\detect\uav_tree_stone\weights\best.pt，
+在项目根目录直接运行：
+python predict_image.py
+
+程序会识别本文件夹内的全部图片，并在完成后自动打开结果文件夹。
+模型放在其他位置时，可添加 --model "实际的best.pt路径"。
