@@ -8,6 +8,19 @@ from uav_yolo.runtime import _version_numbers
 
 
 class ProfileTests(unittest.TestCase):
+    def test_default_profile_matches_version(self):
+        root = Path(__file__).resolve().parents[1]
+        version = (root / "VERSION").read_text(encoding="utf-8").strip()
+        expected_name = {
+            "1.0.0A": "project-a.yaml",
+            "1.0.0B": "project-b.yaml",
+        }[version]
+        default = load_project_config(root / "config" / "project.yaml")
+        expected = load_project_config(root / "config" / expected_name)
+        self.assertEqual(default["training"], expected["training"])
+        self.assertEqual(default["prediction"], expected["prediction"])
+        self.assertEqual(default["datasets"], expected["datasets"])
+
     def test_profiles_use_uploaded_yolo11_data(self):
         root = Path(__file__).resolve().parents[1]
         expected = {

@@ -1,6 +1,6 @@
 # Winter.Z 的图像识别 YOLO11 ver1.0
 
-这是一个用 Python 和 Ultralytics YOLO11 训练航拍图片目标检测模型的入门项目。当前默认配置为 **1.0.0A 显卡友好版**；两个版本共用代码与数据，只是训练默认参数不同。请选择 [Releases](https://github.com/zhangyunzhi062-sketch/test3/releases) 中适合自己的完整包。
+这是一个用 Python 和 Ultralytics YOLO11 训练航拍图片目标检测模型的入门项目。当前 main 分支默认配置为 **1.0.0B 威力加强版**；个人电脑建议下载 **1.0.0A 显卡友好版（Latest）**。两个版本共用代码与数据，只是训练默认参数不同。请选择 [Releases](https://github.com/zhangyunzhi062-sketch/test3/releases) 中适合自己的完整包。
 
 模型目前只检测两类：tree（树木、树冠、树干）和 stone（石头、岩块）。所附数据没有独立的森林标注，因此目前不能直接识别 forest。项目专注于静态图片，未来可扩展到无人机摄像头或 RTSP。
 

@@ -25,16 +25,23 @@ datasets:
       0: 0  # tree-top -> tree
 
 training:
-  model: yolo11n.pt
-  epochs: 100
-  imgsz: 640
-  batch: 8
+  model: yolo11x.pt
+  epochs: 1000
+  imgsz: 832
+  batch: -1
   device: "0"
-  workers: 0
+  workers: 48
   seed: 42
-  patience: 30
+  patience: 200
   project: runs/detect
-  name: uav_tree_stone
+  name: uav_tree_stone_yolo11x_accurate
+  optimizer: AdamW
+  lr0: 0.001
+  lrf: 0.01
+  cos_lr: true
+  close_mosaic: 30
+  multi_scale: 0.25
+  cache: ram
 
 prediction:
   model: runs/detect/uav_tree_stone/weights/best.pt
